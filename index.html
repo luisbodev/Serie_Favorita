@@ -1,0 +1,138 @@
+<!DOCTYPE>
+	<html lang="es">
+		<head>
+			<title>CASA DE PAPEL</title>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width,initial-scale=1,maximun-scale=1">
+			<!--VUE-->
+			<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+			<!--Tailwind-->
+			<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+			
+		</head>
+		<body class="" id="inicio">
+			<header class="bg-white md:flex md:justify-between md:px-2 md:py-1 md:items-center" id="app">
+			<div class="flex items-center justify-between px-2 py-1 md:px-0 md:py-0">
+				<div class="flex items-center">
+					<img class="h-12" src="img/logo.png" alt="Logo de Casa de Papel">
+					<h1 class="text-red-800 text-2xl font-bold">LA CASA <span class="bg-red-800 text-white p-1">DE</span> PAPEL</h1>
+				</div>
+				<div class="md:hidden">
+					<button  @click="isOpen = !isOpen" type="button" class="block text-black focus:text-red-800 focus:outline-none">
+						<!-- <path v-if="isOpen" fill-rule="evenodd" d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z" clip-rule="evenodd"/> -->
+						<svg v-if="isOpen" class="h-6 w-6 fill-current bi bi-x-octagon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.54.146A.5.5 0 014.893 0h6.214a.5.5 0 01.353.146l4.394 4.394a.5.5 0 01.146.353v6.214a.5.5 0 01-.146.353l-4.394 4.394a.5.5 0 01-.353.146H4.893a.5.5 0 01-.353-.146L.146 11.46A.5.5 0 010 11.107V4.893a.5.5 0 01.146-.353L4.54.146zM5.1 1L1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z" clip-rule="evenodd"/></svg>
+
+						<svg v-if="!isOpen" class="h-6 w-6 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+					</button>					
+				</div>
+			</div>
+				<div :class="isOpen ? 'block' : 'hidden' "class="px-1 pb-1 md:flex md:p-0">
+					<a href="#inicio" class="block px-2 text-red-800 font-semibold rounded hover:bg-gray-200">Inicio</a>
+					<a href="#trailer" class="block mt-1 px-2 text-red-800 font-semibold rounded hover:bg-gray-200 md:mt-0 md:ml-2">Trailers</a>
+					<a href="#ver" class="block mt-1 px-2 text-red-800 font-semibold rounded hover:bg-gray-200 md:mt-0 md:ml-2">¡Ver Ahora!</a>
+					<a href="#meet" class="block mt-1 px-2 text-red-800 font-semibold rounded hover:bg-gray-200 md:mt-0 md:ml-2">Meet & Greet</a>
+				</div>
+			</header>
+
+			<div style="background-image: url('img/bg.jpg');" class="h-screen bg-fixed bg-top bg-cover bg-no-repeat flex items-end px-6">
+				<div class="block">
+					<h1 class="block text-red-800  w-full text-4xl sm:text-5xl md:text-6xl font-bold " style="-webkit-text-stroke: 1px white;">
+						¿ERES PARTE DE LA RESISTENCIA?
+					</h1>
+					<p class="block text-white text-xl md:text-2xl lg:text-3xl font-semibold">
+						Una banda organizada de ladrones tiene el objetivo de cometer el atraco del siglo en la Fábrica Nacional de Moneda y Timbre. Cinco meses de preparación quedarán reducidos a once días para poder llevar a cabo con éxito el gran golpe.
+					</p>
+				</div>
+			</div>
+
+			<div class="block bg-black pb-8" id="trailer">
+					<h1 class="block text-red-800  w-full text-6xl  md:text-6xl font-bold text-center">
+							TRAILERS
+						</h1>
+					<div class="w-full md:flex md:justify-center md:items-center">
+						<div class="w-auto md:w-9/12">
+							<iframe width="100%" height="500px" src="https://www.youtube.com/embed/rLTD_AD91uE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+
+			</div>
+
+			<div class="block sm:flex sm:items-center sm:justify-center sm:flex-shrink-0" id="ver">
+					<h1 class="block text-red-800  w-full text-4xl  md:text-6xl font-bold text-center">
+							¡MIRA LA SERIE!
+						</h1>
+					<div class="w-full">
+						<div class="flex justify-center">
+							<img src="img/netflix.png" class="w-2/4 md:w-1/4">
+						</div>
+						<a href="https://www.netflix.com/title/80192098" target="_blank" class="text-red-800 font-bold flex justify-center hover:underline my-4">Ver la casa de papel en Netflix</a>
+					</div>
+
+			</div>
+			
+			<div class="block bg-black" id="meet">
+					<h1 class="block text-red-800  w-full text-4xl  md:text-6xl font-bold text-center">
+							MEET & GREET
+						</h1>
+					<p class="text-white text-center">Sorteo de entradas para conocer tus actores favoritos llenando los siguientes datos:</p>
+					<div class="block">
+						<form class="w-full p-4">
+							<div class="md:flex md:items-center mb-6">
+								<div class="md:w-1/3">
+									<label class="block md:text-right mb-1 md:mb-0 pr-4 text-white">Nombre:</label>
+								</div>
+								<div class="md:w-1/3">
+									<input type="text" name="nombre" class="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-red-800" required>
+								</div>
+							</div>
+							<div class="md:flex md:items-center mb-6">
+								<div class="md:w-1/3">
+									<label class="block md:text-right mb-1 md:mb-0 pr-4 text-white">Apellido:</label>
+								</div>
+								<div class="md:w-1/3">
+									<input type="text" name="apellido" class="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-red-800" required>
+								</div>
+							</div>
+  							<div class="md:flex md:items-center mb-6">
+								<div class="md:w-1/3">
+									<label class="block md:text-right mb-1 md:mb-0 pr-4 text-white">Correo:</label>
+								</div>
+								<div class="md:w-1/3">
+									<input type="email" name="correo" class="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-red-800" required>
+								</div>
+							</div>
+  							<div class="md:flex md:items-center mb-6">
+								<div class="md:w-1/3">
+									<label class="block md:text-right mb-1 md:mb-0 pr-4 text-white">Edad:</label>
+								</div>
+								<div class="md:w-1/3">
+									<input type="number" name="Edad" class="appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-red-800" required>
+								</div>
+							</div>
+							<div class="md:flex md:items-center">
+							    <div class="md:w-1/3"></div>
+							    <div class="md:w-2/3">
+							      <button class="shadow bg-red-800 hover:bg-white hover:text-red-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+							        Enviar
+							      </button>
+							    </div>
+							</div>
+							
+						</form>
+					</div>
+
+			</div>
+			<footer>
+				<h6 class="text-center p-2">Sitio creado por: Luis Bonilla</h6>
+			</footer>
+			<script type="text/javascript">
+				var app = new Vue({
+				   el: '#app',
+				   data: {
+				      isOpen: false,
+				      }
+				   })
+				
+			</script>
+		</body>
+</html>
